@@ -1,26 +1,22 @@
-const app = require('koa')(),
+const koa = require('koa'),
+  app = new koa(),
   json = require('koa-json'),
   views = require('koa-views'),
   onerror = require('koa-onerror'),
 
-  index = require('./routes/index'),
-  users = require('./routes/users');
+  router = require('./routes/router.js');
 
 // error handler
 onerror(app);
 
 // global middlewares
-app.use(views('views', {
-  root: __dirname + '/views',
-  default: 'ejs'
-}));
+app.use(views(__dirname + '/views', { extension: 'ejs' }));
 app.use(require('koa-bodyparser')());
 app.use(json());
 
 app.use(require('koa-static')(__dirname + '/public'));
 
 // routes definition
-app.use(index.routes(), index.allowedMethods());
-app.use(users.routes(), users.allowedMethods());
+app.use(router.routes()).use(router.allowedMethods());
 
 module.exports = app;

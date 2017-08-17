@@ -1,8 +1,104 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* ----------------------nav------------------ */
+.nav {
+  width: 100%;
+  padding: 5px 0;
+  background-color: #444444;
+  color: white;
+  font-size: 13px;
 }
-
-a {
-  color: #00B7FF;
+.nav-container {
+  min-height: 40px;
+  width: 90%;
+  margin: auto;
+}
+.cnode-logo {
+  cursor: pointer;
+}
+.search-form {
+  float: left;
+  margin-top: 5px;
+}
+.search-query {
+  padding: 3px 5px 3px 22px;
+  color: #666;
+  border: 0px;
+  border-radius: 6px;
+  height: 24px;
+}
+.nav-menu {
+  float: right;
+}
+.nav-menu li {
+  float: left;
+  margin-left: 20px;
+}
+.nav-menu li:hover {
+  cursor: pointer;
+}
+.isLogon, .isLogout {
+  display: none;
+}
+/* -------------------footer------------------ */
+#footer {
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+}
+#footer_main {
+  margin: auto;
+  width: 90%;
+}
+.links {
+  margin-bottom: 5px;
+}
+/* main */
+#main {
+  width: 90%;
+  margin: 10px auto;
+  min-height: 400px;
+  height: auto;
+}
+/* container */
+#container {
+  margin-right: 305px;
+  background-color: white;
+}
+/* sidebar */
+#sidebar {
+  float: right;
+  width: 290px;
+}
+#sidebar>div {
+  margin-bottom: 15px;
+  background-color: white;
+}
+#sidebar .header {
+  padding: 10px;
+}
+#sidebar .inner {
+  padding: 10px;
+}
+.logonBtn {
+  margin-top: 5px;
+  height: 34px;
+  width: 130px;
+  font-size: 14px;
+  color: white;
+  background-color: #54B9D7;
+  border: 0;
+  border-radius: 4px;
+}
+.no-reply-topic, .point-list {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: #7790B9;
+}
+.no-reply-topic li,.point-list li {
+  margin-bottom: 5px;
+  height: 20px;
+  line-height: 20px;
+}
+.sidebar-erweima {
+  text-align: center;
 }
