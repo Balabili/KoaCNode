@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>CNode:Node.js专业中文社区</title>
   <link rel="stylesheet" href="/stylesheets/common.css">
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
@@ -11,13 +11,17 @@
 <body>
   <%- include('component/header.ejs') -%>
   <div id="main">
-    <div id="container"></div>
     <div id="sidebar">
       <%- include('component/sidebar_logon.ejs') -%>
       <%- include('component/sidebar_ad.ejs') -%>
       <%- include('component/sidebar_noReplyTopic.ejs') -%>
       <%- include('component/sidebar_point.ejs') -%>
+      <%- include('component/sidebar_community.ejs') -%>
       <%- include('component/sidebar_erweima.ejs') -%>
+    </div>
+    <div id="container">
+      <%- include('component/topicList.ejs') -%>
+      <%- include('component/topicDetails.ejs') -%>
     </div>
     <div style="clear:both;"></div>
   </div>

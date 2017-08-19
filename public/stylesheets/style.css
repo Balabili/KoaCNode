@@ -9,6 +9,7 @@
 .nav-container {
   min-height: 40px;
   width: 90%;
+  max-width: 1400px;
   margin: auto;
 }
 .cnode-logo {
@@ -30,7 +31,7 @@
 }
 .nav-menu li {
   float: left;
-  margin-left: 20px;
+  margin-left: 35px;
 }
 .nav-menu li:hover {
   cursor: pointer;
@@ -55,6 +56,7 @@
 #main {
   width: 90%;
   margin: 10px auto;
+  max-width: 1400px;
   min-height: 400px;
   height: auto;
 }
@@ -101,4 +103,74 @@
 }
 .sidebar-erweima {
   text-align: center;
+}
+/* topic container */
+#topicListContainer {
+  border: 1px solid white;
+}
+#topicListContainer .header {
+  color: #80BD01;
+  background-color: #F6F6F6;
+}
+.topic-list-header {
+  background-color: #F6F6F6;
+  height: 40px;
+  line-height: 40px;
+  margin: 0;
+  padding: 0;
+}
+.topic-list-header li {
+  float: left; 
+  margin-left: 20px;
+}
+.topic-list-header li a {
+  color: #80BD01;
+}
+.active {
+  color: white !important;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #80BD01;
+}
+.topic-list-item {
+  margin: 0;
+  padding: 0;
+}
+.topic-list-item li {
+  height: 30px;
+  line-height: 30px;
+  padding: 10px;
+}
+.topic-list-item li:hover {
+  background-color:  #F6F6F6;
+}
+.reply-click {
+  display: inline-block;
+  width: 65px;
+  margin-left: 10px;
+}
+.last-reply-user {
+  height: 30px;
+  line-height: 30px;
+  color: #778087;
+}
+.reply-user-image {
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.label-style {
+  padding: 2px;
+  border-radius: 2px;
+  color: white;
+  background-color:  #80BD01;
+}
+.topic-title {
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+}
+.topic-title:hover {
+  text-decoration: underline;
 }

@@ -24,6 +24,18 @@ ul li {
     float: left;
 }
 
+.float-right {
+    float: right;
+}
+
+.clear-both {
+    clear: both;
+}
+
+.small-margin-left {
+    margin-left: 10px;
+}
+
 .margin-bottom {
     margin-bottom: 15px;
 }
