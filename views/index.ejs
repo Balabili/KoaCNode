@@ -12,6 +12,8 @@
   <%- include('component/header.ejs') -%>
   <div id="main">
     <div id="sidebar">
+      <%- include('component/sidebar_authorInfo.ejs') -%>
+      <%- include('component/sidebar_authorOtherTopic.ejs') -%>
       <%- include('component/sidebar_logon.ejs') -%>
       <%- include('component/sidebar_ad.ejs') -%>
       <%- include('component/sidebar_noReplyTopic.ejs') -%>
@@ -20,13 +22,14 @@
       <%- include('component/sidebar_erweima.ejs') -%>
     </div>
     <div id="container">
-      <%- include('component/topicList.ejs') -%>
+      <!-- <%- include('component/topicList.ejs') -%> -->
       <%- include('component/topicDetails.ejs') -%>
     </div>
     <div style="clear:both;"></div>
   </div>
   <%- include('component/footer.ejs') -%>
-  <script src="/javascripts/index.js"></script>
+  <script src="/javascripts/common/jquery-3.2.1.min.js"></script>
+  <script src="/index.bundle.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,4 @@
+import utility from './common/utility.js';
 function showMenu(isLogon) {
     const doc = document;
     let className = isLogon ? 'isLogon' : 'isLogout',
@@ -9,8 +10,12 @@ function showMenu(isLogon) {
 }
 
 window.onload = function () {
-    document.getElementById('cnodeLogo').onclick = function () {
+    const doc = document;
+    doc.getElementById('cnodeLogo').onclick = function () {
         window.location.href = '/';
+    };
+    doc.getElementById('headerLogin').onclick = function(){
+        window.location.href = '/sign/login';
     };
     showMenu(false);
 };

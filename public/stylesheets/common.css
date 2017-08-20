@@ -11,6 +11,9 @@ a {
     color: #00B7FF;
     text-decoration: none;
 }
+a:hover {
+    text-decoration: underline;
+}
 
 p {
     margin-top: 0;
@@ -32,8 +35,16 @@ ul li {
     clear: both;
 }
 
+.clear-left {
+    clear: left;
+}
+
 .small-margin-left {
     margin-left: 10px;
+}
+
+.small-margin-botton {
+    margin-bottom: 10px;
 }
 
 .margin-bottom {

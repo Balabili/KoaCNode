@@ -3,6 +3,7 @@ const koa = require('koa'),
   json = require('koa-json'),
   views = require('koa-views'),
   onerror = require('koa-onerror'),
+  koaStatic = require('koa-static'),
 
   router = require('./routes/router.js');
 
@@ -14,9 +15,10 @@ app.use(views(__dirname + '/views', { extension: 'ejs' }));
 app.use(require('koa-bodyparser')());
 app.use(json());
 
-app.use(require('koa-static')(__dirname + '/public'));
+app.use(koaStatic(__dirname + '/public'));
+app.use(koaStatic(__dirname + '/bin'));
 
 // routes definition
 app.use(router.routes()).use(router.allowedMethods());
 
-module.exports = app;
+app.listen(8090);
