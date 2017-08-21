@@ -8,4 +8,9 @@ index.get('/', async (ctx) => {
   });
 });
 
+index.get('/testSession', async (ctx) => {
+  ctx.session.user = '22222';
+  ctx.body = 222;
+});
+
 module.exports = index;

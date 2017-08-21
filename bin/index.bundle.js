@@ -86,8 +86,11 @@ window.onload = function () {
     doc.getElementById('cnodeLogo').onclick = function () {
         window.location.href = '/';
     };
-    doc.getElementById('headerLogin').onclick = function(){
+    doc.getElementById('headerLogin').onclick = function () {
         window.location.href = '/sign/login';
+    };
+    doc.getElementById('api').onclick = function () {
+        window.location.href = '/testSession';
     };
     showMenu(false);
 };
