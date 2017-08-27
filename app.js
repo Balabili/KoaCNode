@@ -6,7 +6,7 @@ const koa = require('koa'),
   koaStatic = require('koa-static'),
   session = require('koa-session2'),
   mongoose = require('./model/mongo.js'),
-  MongoStore = require('connect-mongo')(session),
+  store = require('./store.js'),
 
   router = require('./routes/router.js');
 
@@ -16,13 +16,9 @@ onerror(app);
 // global middlewares
 app.use(views(__dirname + '/views', { extension: 'ejs' }));
 app.use(session({
-  secret: 'iufahdiuwaiudyawydiua',
-  cookie: { 'maxAge': 60 * 1000 * 60 * 24 * 14 },
-  resave: true,
-  saveUninitialized: true,
-  Store: new MongoStore({
-    mongooseConnection: mongoose.connection
-  })
+  key: 'xxxxxxxxxxxxxxxxxxxxxxxx',
+  store: new store(),
+  maxAge: 1000 * 60 * 60 * 24 * 15
 }));
 app.use(require('koa-bodyparser')());
 app.use(json());
