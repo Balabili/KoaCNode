@@ -12,4 +12,6 @@ let ajax = (actionUrl, type, data) => {
         $.ajax(ajaxSetting);
     });
 };
-export { ajax };
+module.exports = {
+    ajax: ajax
+};

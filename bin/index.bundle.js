@@ -70,6 +70,7 @@
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_utility_js__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_utility_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__common_utility_js__);
 
 function showMenu(isLogon) {
     const doc = document;
@@ -80,27 +81,45 @@ function showMenu(isLogon) {
         menu[i].style.display = 'list-item';
     }
 }
+function initData() {
+    const doc = document, user = doc.getElementById('userdata').value, isLogon = doc.getElementById('islogon');
+    let userData = null;
+    if (user) {
+        userData = JSON.parse(user);
+        showMenu(isLogon);
+        doc.getElementById('userImage').src = userData.avatar_url;
+        doc.getElementById('sidebarUsername').innerText = userData.login;
+    }
+}
 
 window.onload = function () {
     const doc = document;
-    doc.getElementById('cnodeLogo').onclick = function () {
+    doc.getElementById('cnodeLogo').onclick = () => {
         window.location.href = '/';
     };
-    doc.getElementById('headerLogin').onclick = function () {
+    doc.getElementById('home').onclick = () => {
+        window.location.href = '/';
+    };
+    doc.getElementById('headerRegister').onclick = () => {
         window.location.href = '/sign/login';
     };
-    doc.getElementById('api').onclick = function () {
-        window.location.href = '/testSession';
+    doc.getElementById('headerLogin').onclick = () => {
+        window.location.href = '/sign/login';
     };
-    showMenu(false);
+    doc.getElementById('logout').onclick = () => {
+        window.location.href = '/sign/logout';
+        // utility.ajax('/logout', 'POST', {}).then(() => {
+        //     initData();
+        // }).catch((err) => { console.log(err); });
+    };
+
+    initData();
 };
 
 /***/ }),
 /* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-/* unused harmony export ajax */
 let ajax = (actionUrl, type, data) => {
     return new Promise(function (resolve, reject) {
         let ajaxSetting = {
@@ -115,7 +134,9 @@ let ajax = (actionUrl, type, data) => {
         $.ajax(ajaxSetting);
     });
 };
-
+module.exports = {
+    ajax: ajax
+};
 
 /***/ })
 /******/ ]);

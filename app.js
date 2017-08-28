@@ -5,7 +5,6 @@ const koa = require('koa'),
   onerror = require('koa-onerror'),
   koaStatic = require('koa-static'),
   session = require('koa-session2'),
-  mongoose = require('./model/mongo.js'),
   store = require('./store.js'),
 
   router = require('./routes/router.js');

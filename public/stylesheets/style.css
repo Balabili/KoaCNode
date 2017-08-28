@@ -91,6 +91,14 @@
   border: 0;
   border-radius: 4px;
 }
+.add-topic-btn {
+  height: 32px;
+  background-color: #80BD01;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
 .no-reply-topic, .point-list {
   margin: 0;
   padding: 0;
@@ -165,9 +173,10 @@
   height: 30px;
   line-height: 30px;
   padding: 10px;
+  background-color: white;
 }
 .topic-list-item li:hover {
-  background-color:  #F6F6F6;
+  background-color:  #E1E1E1;
 }
 .reply-click {
   display: inline-block;
