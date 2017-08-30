@@ -9,14 +9,14 @@ function showMenu(isLogon) {
     }
 }
 function initData() {
-    const doc = document, user = doc.getElementById('userdata').value, isLogon = doc.getElementById('islogon');
+    const doc = document, user = doc.getElementById('userdata').value, isLogon = doc.getElementById('islogon').value;
     let userData = null;
     if (user) {
         userData = JSON.parse(user);
-        showMenu(isLogon);
         doc.getElementById('userImage').src = userData.avatar_url;
         doc.getElementById('sidebarUsername').innerText = userData.login;
     }
+    showMenu(isLogon && isLogon !== 'false');
 }
 
 window.onload = function () {
@@ -34,11 +34,13 @@ window.onload = function () {
         window.location.href = '/sign/login';
     };
     doc.getElementById('logout').onclick = () => {
-        window.location.href = '/sign/logout';
-        // utility.ajax('/logout', 'POST', {}).then(() => {
-        //     initData();
-        // }).catch((err) => { console.log(err); });
+        utility.ajax('/sign/logout', 'POST', {}).then(() => {
+            window.location.href = '/';
+        }).catch((err) => { console.log(err); });
     };
-
+    doc.getElementsByClassName('topic-list-item')[0].onclick = (e) => {
+        let topicId = e.target.id;
+        window.location.href = '/topic/' + topicId;
+    };
     initData();
 };

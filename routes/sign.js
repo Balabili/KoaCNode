@@ -1,5 +1,6 @@
 const router = require('koa-router'),
     signService = require('../service/signService.js'),
+    userModel = require('../model/user.js'),
     config = require('../config.js');
 
 let sign = new router();
@@ -14,11 +15,18 @@ sign.get('/RegisteredByGithub', async (ctx) => {
     await signService.post(path).then(function (data) {
         userData = data;
     });
-    ctx.session.user = userData;
+    if (userData) {
+        let userObj = JSON.parse(userData), user = { name: userObj.login, email: userObj.email }, dbUser = null;
+        ctx.session.user = userData;
+        dbUser = await userModel.getUserByName(userObj.login);
+        if (!dbUser) {
+            await userModel.addUser(user);
+        }
+    }
     await ctx.redirect('/');
 });
 
-sign.get('/logout', async (ctx) => {
+sign.post('/logout', async (ctx) => {
     ctx.session.user = null;
     ctx.body = true;
 });

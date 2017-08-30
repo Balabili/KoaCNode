@@ -2,29 +2,20 @@ const mongoose = require('./mongo.js'),
     logger = require('../logger/logger.js'),
     Schema = mongoose.Schema;
 
-let CommentSchema = new Schema({
-    content: { type: String, required: true }
+let UserSchema = new Schema({
+    name: { type: String, required: true },
+    // password: { type: String, required: true },
+    image: { type: String },
+    email: { type: String, required: true },
+    personalSite: { type: String },
+    personalPosition: { type: String },
+    personalWeibo: { type: String },
+    personalSign: { type: String },
+    score: { type: Number, default: 0 }
 }),
-    TopicSchema = new Schema({
-        topicUser: { type: String, required: true },
-        title: { type: String, required: true },
-        content: { type: String, required: true },
-        comments: [CommentSchema]
-    }),
-    UserSchema = new Schema({
-        name: { type: String, required: true },
-        // password: { type: String, required: true },
-        email: { type: String, required: true },
-        personalSite: { type: String },
-        personalPosition: { type: String },
-        personalWeibo: { type: String },
-        personalSign: { type: String },
-        score: { type: Number, default: 0 },
-        topic: [TopicSchema]
-    }),
     User = mongoose.model('User', UserSchema);
 
-function AddUser(data) {
+function addUser(data) {
     let user = new User({
         name: data.name,
         email: data.email
@@ -37,3 +28,18 @@ function AddUser(data) {
         }
     });
 }
+
+function getUserByName(name) {
+    return User.findOne({ name: name }, (err) => {
+        if (err) {
+            logger.error(`getUserByName error:${err}`);
+        } else {
+            logger.info(`getUserByName successgul.Username: ${name}`);
+        }
+    });
+}
+
+module.exports = {
+    addUser: addUser,
+    getUserByName: getUserByName
+};

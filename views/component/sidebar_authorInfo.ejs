@@ -1,13 +1,19 @@
 <div>
     <div class="header">
-        <span>作者</span>
+        <span>个人信息</span>
     </div>
     <div class="inner">
         <a href="javascript:void(0);" class="author-image-name">
             <img id="userImage" class="float-left">
             <div id="sidebarUsername"></div>
         </a>
-        <span>积分:50</span>
-        <div>"这家伙很懒，什么个性签名都没有留下。"</div>
+        <span><%= userInfo.score %></span>
+        <div>
+            <% if(userInfo.personalSign) { %>
+                "<%= userInfo.personalSign %>"
+            <% } else { %>
+                "这家伙很懒，什么个性签名都没有留下。"
+            <% } %>
+        </div>
     </div>
 </div>

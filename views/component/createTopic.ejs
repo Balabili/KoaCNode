@@ -1,0 +1,22 @@
+<div class="create-topic">
+    <div class="create-topic-header">
+        <a href="/">主页</a>/<span>发布话题:</span>
+    </div>
+    <div class="create-topic-content">
+        <form id="createTopicForm" action="/topic/create" method="post">
+            <fieldset class="create-topic-fieldset">
+                <label for="selectTab">选择版块：</label>
+                <select name="selectTab" id="selectTab">
+                    <option value="0">请选择</option>
+                    <option value="1">分享</option>
+                    <option value="2">问答</option>
+                    <option value="3">招聘</option>
+                    <option value="4">客户端测试</option>
+                </select>
+                <input class="create-topic-title" name="topicTitle" id="topicTitle" type="text" placeholder="标题字数10字以上">
+                <textarea name="createTopicText" id="createTopicText"></textarea>
+                <input type="submit" name="submit" id="publishTopic" value="提交">
+            </fieldset>
+        </form>
+    </div>
+</div>

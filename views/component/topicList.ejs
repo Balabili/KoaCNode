@@ -11,38 +11,30 @@
     </div>
     <div class="topic-list">
         <ul class="topic-list-item">
-            <li>
-                <a class="float-left" href="javascript:void(0);"><img style="height:30px;width:30px;" src="/images/CNode.jpg"></a>
-                <span class="float-left reply-click">
-                    <span>11</span>
+            <% for(var i = 0; i < topics.length; i++) { %>
+                <li>
+                    <a class="float-left" href="javascript:void(0);"><img style="height:30px;width:30px;" src="<%= topics[i].topicUserImg %>"></a>
+                    <span class="float-left reply-click">
+                    <span>
+                        <% if(topics[i].comments.length){ %>
+                            0
+                        <% }else{ %>
+                            <%= topics[i].comments.length %>
+                        <% } %>
+                    </span>
                     <span>/</span>
-                    <span>111</span>
-                </span>
-                <a href="javascript:void(0);" class="float-right last-reply-user">
-                    <img class="reply-user-image" src="/images/CNode.jpg">
+                    <span><%= topics[i].clickCount %></span>
+                    </span>
+                    <a href="javascript:void(0);" class="float-right last-reply-user">
+                    <img class="reply-user-image" src="<%= topics[i].topicUserImg %>">
                     <span>5天前</span>
                 </a>
-                <div>
-                    <span class="small-margin-left label-style">置顶</span>
-                    <a class="topic-title">北京7月29日Node Party活动总结</a>
-                </div>
-            </li>
-            <li>
-                <a class="float-left" href="javascript:void(0);"><img style="height:30px;width:30px;" src="/images/CNode.jpg"></a>
-                <span class="float-left reply-click">
-                    <span>11</span>
-                    <span>/</span>
-                    <span>111</span>
-                </span>
-                <a href="javascript:void(0);" class="float-right last-reply-user">
-                    <img class="reply-user-image" src="/images/CNode.jpg">
-                        <span>5天前</span>
-                    </a>
-                <div>
-                    <span class="small-margin-left label-style">置顶</span>
-                    <a class="topic-title">北京7月29日Node Party活动总结</a>
-                </div>
-            </li>
+                    <div>
+                        <span class="small-margin-left label-style">置顶</span>
+                        <a id="<%= topics[i]._id %>" class="topic-title"><%= topics[i].title %></a>
+                    </div>
+                </li>
+            <% } %>
         </ul>
     </div>
 </div>

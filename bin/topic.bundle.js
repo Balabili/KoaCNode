@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -92,7 +92,8 @@ module.exports = {
 };
 
 /***/ }),
-/* 1 */
+/* 1 */,
+/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -100,46 +101,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_utility_js__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_utility_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__common_utility_js__);
 
-function showMenu(isLogon) {
-    const doc = document;
-    let className = isLogon ? 'isLogon' : 'isLogout',
-        menu = doc.getElementsByClassName(className),
-        len = menu.length;
-    for (let i = 0; i < len; i++) {
-        menu[i].style.display = 'list-item';
-    }
-}
-function initData() {
-    const doc = document, user = doc.getElementById('userdata').value, isLogon = doc.getElementById('islogon').value;
-    let userData = null;
-    if (user) {
-        userData = JSON.parse(user);
-        doc.getElementById('userImage').src = userData.avatar_url;
-        doc.getElementById('sidebarUsername').innerText = userData.login;
-    }
-    showMenu(isLogon && isLogon !== 'false');
-}
 
 window.onload = function () {
     const doc = document;
-    doc.getElementById('cnodeLogo').onclick = () => {
-        window.location.href = '/';
+    doc.getElementById('createTopicForm').onsubmit = function () {
+        let boardName = doc.getElementById('selectTab').value,
+            title = doc.getElementById('topicTitle').value,
+            content = doc.getElementById('createTopicText').value;
+        if (!boardName) {
+            alert('你必须选择一个版块');
+            return false;
+        }
+        if (title.length <= 10) {
+            alert('标题字数必须大于10');
+            return false;
+        }
+        if (__WEBPACK_IMPORTED_MODULE_0__common_utility_js___default.a.strHelper.trim(content).length === 0) {
+            alert('你必须输入话题内容');
+            return false;
+        }
     };
-    doc.getElementById('home').onclick = () => {
-        window.location.href = '/';
-    };
-    doc.getElementById('headerRegister').onclick = () => {
-        window.location.href = '/sign/login';
-    };
-    doc.getElementById('headerLogin').onclick = () => {
-        window.location.href = '/sign/login';
-    };
-    doc.getElementById('logout').onclick = () => {
-        __WEBPACK_IMPORTED_MODULE_0__common_utility_js___default.a.ajax('/sign/logout', 'POST', {}).then(() => {
-            window.location.href = '/';
-        }).catch((err) => { console.log(err); });
-    };
-    initData();
 };
 
 /***/ })

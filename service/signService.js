@@ -4,7 +4,7 @@ const request = require('request'),
 function getUserData(options) {
     return new Promise((resolve, reject) => {
         request(options, (error, resp, data) => {
-             resolve(data);
+            resolve(data);
         });
     });
 }
@@ -13,7 +13,7 @@ async function post(opts) {
     return new Promise((resolve, reject) => {
         request.post(opts, function (err, res, body) {
             if (err) {
-                reject(err);
+                return reject(err);
             }
             let params = body.split('&'), i = 0;
             for (i; i < params.length; i++) {

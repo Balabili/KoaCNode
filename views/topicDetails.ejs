@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CNode:Node.js专业中文社区</title>
+  <link rel="stylesheet" href="/stylesheets/common.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <%- include('component/header.ejs') -%>
+  <div id="main">
+    <div id="sidebar">
+        <%- include('component/sidebar_markdown.ejs') -%>
+        <%- include('component/sidebar_publishTopicGuide.ejs') -%>
+    </div>
+    <div id="container">
+        <%- include('component/createTopic.ejs') -%>
+    </div>
+    <div style="clear:both;"></div>
+  </div>
+  <div>
+  </div>
+  <%- include('component/footer.ejs') -%>
+  <script src="/javascripts/common/jquery-3.2.1.min.js"></script>
+  <script src="/createTopic.bundle.js"></script>
+</body>
+
+</html>

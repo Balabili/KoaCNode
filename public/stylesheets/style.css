@@ -82,6 +82,7 @@
   padding: 10px;
 }
 .logonBtn {
+  cursor: pointer;
   margin-top: 5px;
   height: 34px;
   width: 130px;
@@ -109,6 +110,17 @@
   margin-bottom: 5px;
   height: 20px;
   line-height: 20px;
+}
+.markdown-pointer {
+  padding: 0;
+  margin: 0;
+}
+.markdown-pointer li {
+  height: 26px;
+  line-height: 26px;
+}
+.markdown-pointer a {
+  color: #778087;
 }
 .sidebar-erweima {
   text-align: center;
@@ -258,4 +270,54 @@
 .topic-replies-item-container {
   padding-left: 60px;
   font-size: 16px;
+}
+
+.create-topic-header {
+  padding: 10px;
+  background-color: #F6F6F6;
+}
+.create-topic-header a {
+  color: #80BD01;
+  cursor: pointer;
+}
+.create-topic-content {
+  background-color: white;
+}
+
+.create-topic-fieldset {
+  border: 0;
+}
+.create-topic-fieldset select {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+}
+.create-topic-title {
+  display: block;
+  margin-top: 10px;
+  border: 1px solid #F6F6F6;
+  padding: 10px;
+  width: 90%;
+  border-radius: 10px;
+}
+#createTopicText {
+  display: block;
+  margin-top: 10px;
+  line-height: 20px;
+  resize: none;
+  width: 90%;
+  height: 500px;
+  border-radius: 10px;
+}
+#publishTopic {
+  display: inline-block;
+  margin-top: 10px;
+  border: 0;
+  border-radius: 5px;
+  width: 100px;
+  color: white;
+  cursor: pointer;
+  background-color: #0088CC;
+  height: 30px;
+  line-height: 30px;
 }

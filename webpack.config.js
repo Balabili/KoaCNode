@@ -7,7 +7,8 @@ let webpack = require('webpack'),
 module.exports = {
     //页面入口文件配置
     entry: {
-        'index': './public/javascripts/index.js'
+        'index': './public/javascripts/index.js',
+        'createTopic': './public/javascripts/createTopic.js'
     },
     //入口文件输出配置
     output: {

@@ -1,7 +1,7 @@
 let ajax = (actionUrl, type, data) => {
     return new Promise(function (resolve, reject) {
         let ajaxSetting = {
-            actionUrl: actionUrl,
+            url: actionUrl,
             type: type,
             data: data,
             success(result) {
@@ -11,7 +11,13 @@ let ajax = (actionUrl, type, data) => {
         };
         $.ajax(ajaxSetting);
     });
+}, strHelper = {};
+
+strHelper.trim = (str) => {
+    return str.replace(/(^\s*)|(\s*$)/g, '');
 };
+
 module.exports = {
-    ajax: ajax
+    ajax: ajax,
+    strHelper: strHelper
 };
