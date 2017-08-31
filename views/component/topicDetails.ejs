@@ -1,12 +1,25 @@
 <div>
     <div class="topic-details">
         <div class="topic-header">
-            <h2>业余时间做的玩具</h2>
+            <h2><%= topicDetails.title %></h2>
             <ul class="topic-header-details">
                 <li>发布于2天前</li>
-                <li>作者 <a href="javascript:void(0);">xxxxxx</a></li>
-                <li>666次浏览</li>
-                <li>来自 分享</li>
+                <li>作者 <a href="/user/<%= topicDetails.topicUser %>"><%= topicDetails.topicUser %></a></li>
+                <li>浏览 <%= topicDetails.clickCount %></li>
+                <li>来自 
+                    <% switch(topicDetails.board){case 1: %>
+                    分享
+                    <% break; %>
+                    <% case 2: %>
+                    问答
+                    <% break; %>
+                    <% case 3: %>
+                    招聘
+                    <% break; %>
+                    <% case 4: %>
+                    客户端测试
+                    <% break;} %>
+                </li>
             </ul>
             <div class="clear-left small-margin-botton"></div>
         </div>

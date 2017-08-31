@@ -1,11 +1,11 @@
 <div>
     <div class="header">
-        <span>作者</span>
+        <span>个人信息</span>
     </div>
     <div class="inner">
         <a href="javascript:void(0);" class="author-image-name">
-            <img id="userImage" class="float-left">
-            <div id="sidebarUsername"></div>
+            <img id="userImage" class="float-left" src="<%= userInfo.image %>">
+            <div id="sidebarUsername"><%= userInfo.name %></div>
         </a>
         <span><%= userInfo.score %></span>
         <div>

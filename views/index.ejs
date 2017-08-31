@@ -12,9 +12,8 @@
   <%- include('component/header.ejs') -%>
   <div id="main">
     <div id="sidebar">
-      <!-- <%- include('component/sidebar_authorOtherTopic.ejs') -%> -->
       <% if(isLogon) { %>
-        <%- include('component/sidebar_authorInfo.ejs') -%>
+        <%- include('component/sidebar_userInfo.ejs') -%>
         <%- include('component/sidebar_addTopic.ejs') -%>
       <% } else { %>
         <%- include('component/sidebar_logon.ejs') -%>
@@ -27,7 +26,6 @@
     </div>
     <div id="container">
       <%- include('component/topicList.ejs') -%>
-      <!-- <%- include('component/topicDetails.ejs') -%> -->
     </div>
     <div style="clear:both;"></div>
   </div>

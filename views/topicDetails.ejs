@@ -12,11 +12,13 @@
   <%- include('component/header.ejs') -%>
   <div id="main">
     <div id="sidebar">
-        <%- include('component/sidebar_markdown.ejs') -%>
-        <%- include('component/sidebar_publishTopicGuide.ejs') -%>
+        <%- include('component/sidebar_userInfo.ejs') -%>
+        <%- include('component/sidebar_ad.ejs') -%>
+        <%- include('component/sidebar_authorOtherTopic.ejs') -%>
+        <%- include('component/sidebar_noReplyTopic.ejs') -%>
     </div>
     <div id="container">
-        <%- include('component/createTopic.ejs') -%>
+        <%- include('component/topicDetails.ejs') -%>
     </div>
     <div style="clear:both;"></div>
   </div>

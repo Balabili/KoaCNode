@@ -40,7 +40,7 @@ window.onload = function () {
     };
     doc.getElementsByClassName('topic-list-item')[0].onclick = (e) => {
         let topicId = e.target.id;
-        window.location.href = '/topic/' + topicId;
+        window.location.href = '/topic/details/' + topicId;
     };
     initData();
 };

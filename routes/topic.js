@@ -8,9 +8,10 @@ topic.get('/', async (ctx) => {
     ctx.body = 'this is a users response!';
 });
 
-topic.get('/:id', async (ctx) => {
-    let topicId = ctx.request.query.id, currentTopic = await topicModel.getTopicById(topicId);
-    await ctx.render('topicDetails', { topicDetails: currentTopic });
+topic.get('/details/:id', async (ctx) => {
+    let topicId = ctx.params.id, currentTopic = await topicModel.getTopicById(topicId),
+        userInfo = await userModel.getUserByName(currentTopic.topicUser);
+    await ctx.render('topicDetails', { topicDetails: currentTopic, userInfo: userInfo });
 });
 
 topic.get('/create', async (ctx) => {

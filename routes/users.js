@@ -6,7 +6,7 @@ user.get('/', async (ctx) => {
   ctx.body = 'this is a users response!';
 });
 
-user.get('/bar', async (ctx) => {
+user.get('/:name', async (ctx) => {
   ctx.body = 'this is a users/bar response!';
 });
 
