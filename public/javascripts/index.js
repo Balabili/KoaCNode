@@ -38,6 +38,7 @@ window.onload = function () {
             window.location.href = '/';
         }).catch((err) => { console.log(err); });
     };
+    //时间委托bug
     doc.getElementsByClassName('topic-list-item')[0].onclick = (e) => {
         let topicId = e.target.id;
         window.location.href = '/topic/details/' + topicId;
